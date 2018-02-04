@@ -32,14 +32,14 @@ endfunction
 
 let s:ancientRawMode = ''
 let s:ancientColorMode = ''
-function! UpdateColor()
+function! ModeColor()
     let l:currentRawMode = mode()
     if l:currentRawMode !=# s:ancientRawMode
         let s:ancientRawMode = l:currentRawMode
         let l:currentColorMode = s:getColorMode(l:currentRawMode)
         if l:currentColorMode !=# s:ancientColorMode
             let s:ancientColorMode = l:currentColorMode
-            " TODO complete
+            s:changeColor(l:currentColorMode)
         fi
     fi
 endfunction
